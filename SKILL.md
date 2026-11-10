@@ -1,6 +1,6 @@
 ---
 name: multi-agent-dispatch
-description: Coordinate multi-agent work in any repo - the Owner may name who does what. dispatch.py ask sends one worker to read or write text with no branch or review; dispatch.py run does author, review and draft PR with any named author and reviewer among OpenCode free models, Codex and headless Claude Haiku/Sonnet. Use when the user says "dispatch", names a worker for a job (e.g. "Haiku writes, Codex reviews"),, or asks to run several tasks in parallel.
+description: Coordinate multi-agent work in any repo - the Owner may name who does what. dispatch.py ask sends one worker to read or write text with no branch or review; dispatch.py run does author, review and draft PR with any named author and reviewer among OpenCode free models, Codex and headless Claude Haiku/Sonnet. Use when the user says "dispatch", names a worker for a job (e.g. "Haiku writes, Codex reviews"), or asks to run several tasks in parallel.
 ---
 
 # Multi-agent dispatch
@@ -64,4 +64,4 @@ Confirm task, allowed paths, acceptance command and authorization with the Owner
 
 ## Finish
 
-Run the runner with `run_in_background` and keep the session open; its exit is the only wake-up, so don't Monitor, poll or call pools.py around it. After a resumed session check `pools.py status`. Read the one-line result; open `summary.json` only when it is not PASS, and check `scope_expanded` before merge. Reproduce every finding before accepting a fix. Missing evidence is BLOCKED or ENVIRONMENT_ERROR, never PASS. On any non-PASS and before merge read [review.md](references/review.md); before worktree cleanup read [worktrees.md](references/worktrees.md). Routing internals, quota and egress rules: [policy.md](references/policy.md); manual fallback: [tasks.md](references/tasks.md); agy hand-off: [agy.md](references/agy.md).
+Run the runner with `run_in_background` and keep the session open; its exit is the only wake-up, so don't Monitor, poll or call pools.py around it. After a resumed session check `pools.py status`. Read the one-line result; open `summary.json` only when it is not PASS, and check `scope_expanded` before merge. Reproduce every finding before accepting a fix. Missing evidence is BLOCKED or ENVIRONMENT_ERROR, never PASS. On any non-PASS and before merge read [review.md](references/review.md); before worktree cleanup read [worktrees.md](references/worktrees.md). Routing internals, quota and egress rules: [policy.md](references/policy.md); manual fallback: [tasks.md](references/tasks.md).
