@@ -1,0 +1,3 @@
+{"type":"thread.started","thread_id":"x"}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"findings\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":29414,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":69,"reasoning_output_tokens":52}}

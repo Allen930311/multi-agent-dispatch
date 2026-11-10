@@ -1,0 +1,45 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "free-worker": {
+      "description": "Restricted coding worker",
+      "mode": "primary",
+      "permission": {
+        "*": "deny",
+        "read": {
+          "*": "allow",
+          "*.env": "deny",
+          "*.env.*": "deny"
+        },
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "edit": {
+          "*": "allow",
+          "opencode.json": "deny",
+          ".opencode/**": "deny",
+          ".git/**": "deny",
+          "**/.git/**": "deny"
+        },
+        "external_directory": "deny",
+        "bash": "deny",
+        "task": "deny"
+      }
+    },
+    "free-reader": {
+      "description": "Read-only advisory reviewer",
+      "mode": "primary",
+      "permission": {
+        "*": "deny",
+        "read": { "*": "allow", "*.env": "deny", "*.env.*": "deny" },
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "edit": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "external_directory": "deny"
+      }
+    }
+  }
+}

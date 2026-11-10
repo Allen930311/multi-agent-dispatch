@@ -1,0 +1,11 @@
+{
+  "*": {
+    "trailer": "Co-Authored-By: Claude <noreply@anthropic.com>",
+    "pr_trailer": "Generated with Claude Code"
+  },
+  "github.com/example-owner/private-repo": {
+    "free_pool_deny": ["src/miningkit/data", "_reports"],
+    "no_free_pools": false,
+    "no_pr": false
+  }
+}
