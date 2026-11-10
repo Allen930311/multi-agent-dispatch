@@ -5,19 +5,7 @@
 You talk to Claude Code the way you'd talk to a lead: *"Haiku writes it, Codex reviews it."*
 Claude turns that into one command. A Python runner then hands the task to the worker you named, runs your tests, gets a separate model to review the diff, and opens a **draft** PR. Nothing is merged without you.
 
-```
- you ──"Haiku writes, Codex reviews"──▶ Claude Code (coordinator)
-                                            │  dispatch.py run …
-                                            ▼
-   ┌──────────── isolated git worktree ─────────────────────────────┐
-   │  author  ──▶  your --accept command  ──▶  independent reviewer │
-   │  (claude-haiku)    (e.g. pytest)            (codex, read-only) │
-   │       ▲________ failing tests / findings sent back ______│     │
-   └────────────────────────────────────────────────────────────────┘
-                                            │
-                                            ▼
-                           draft PR + one-line JSON result
-```
+<p align="center"><img src="docs/hero.png" alt="You say &quot;Haiku writes, Codex reviews&quot;; Claude Code dispatches it; inside an isolated git worktree the author writes, tests run and a reviewer checks, looping back on failure; the result is a draft PR. Workers never get Git credentials." width="100%"></p>
 
 ---
 
